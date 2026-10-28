@@ -14,7 +14,7 @@ export default function EmployeeListPage() {
   const [error, setError] = useState("");
 
   useEffect(() => {
-    fetch("http://127.0.0.1:8001/api/employees")
+    fetch("http://localhost:8000/api/employees")
       .then((res) => {
         if (!res.ok) throw new Error("Failed to fetch employees");
         return res.json();
