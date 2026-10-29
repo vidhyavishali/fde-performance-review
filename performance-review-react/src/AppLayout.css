@@ -1,0 +1,25 @@
+#root {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  border: none;
+  min-height: 100svh;
+  text-align: left;
+}
+
+.app-layout {
+  display: flex;
+  min-height: 100vh;
+  background: linear-gradient(120deg, #f7f9ff 0%, #eef3fb 100%);
+}
+
+.app-content {
+  flex: 1;
+  padding: 28px;
+  overflow: auto;
+}
+
+.page-placeholder {
+  margin: 0;
+  color: #0f172a;
+}

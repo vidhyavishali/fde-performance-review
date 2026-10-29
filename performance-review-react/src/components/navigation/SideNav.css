@@ -1,13 +1,19 @@
 .sidenav {
-  width: 250px;
+  width: 280px;
   min-height: 100vh;
-  background-color: #1e293b;
-  padding: 20px;
+  background: linear-gradient(180deg, #14213b 0%, #0f1b33 100%);
+  padding: 22px 14px 14px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .sidenav-title {
-  color: white;
-  margin-bottom: 30px;
+  color: #e8efff;
+  margin: 0 10px 18px;
+  font-size: 1.12rem;
+  font-weight: 700;
 }
 
 .menu-item {
@@ -17,19 +23,33 @@
   width: 100%;
   border: none;
   background: transparent;
-  color: white;
-  padding: 12px 16px;
+  color: rgba(228, 236, 255, 0.88);
+  padding: 13px 14px;
   margin-bottom: 8px;
-  border-radius: 8px;
+  border-radius: 10px;
   cursor: pointer;
-  font-size: 15px;
-  transition: 0.2s;
+  font-size: 0.98rem;
+  font-weight: 600;
+  transition: background-color 0.2s ease;
+  text-align: left;
 }
 
 .menu-item:hover {
-  background-color: #334155;
+  background-color: rgba(111, 156, 255, 0.15);
 }
 
 .menu-item.active {
-  background-color: #2563eb;
+  background: linear-gradient(180deg, #2d74ee 0%, #235fd9 100%);
+  color: #ffffff;
+  box-shadow: 0 8px 16px rgba(29, 78, 216, 0.3);
+}
+
+.sidenav-main {
+  flex: 1;
+}
+
+.sidenav-footer {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  margin-top: 14px;
+  padding-top: 14px;
 }

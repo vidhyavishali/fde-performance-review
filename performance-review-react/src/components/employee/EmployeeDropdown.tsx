@@ -1,5 +1,5 @@
 import type Employee from '../../interfaces/Employee';
-import React,{useState, useEffect } from 'react'; 
+import { useState, useEffect } from 'react'; 
 
 interface EmployeeDropdownProps {
   value: number | "";
