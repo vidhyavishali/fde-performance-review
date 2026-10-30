@@ -10,7 +10,6 @@ const menuItems = [
   { key: "employees", label: "👥 Employees" },
   { key: "review-periods", label: "📋 Review Periods" },
   { key: "reviews", label: "📝 Reviews" },
-  { key: "reports", label: "📊 Reports" },
   { key: "submit-review", label: "➕ Submit Review" },
 ];
 
