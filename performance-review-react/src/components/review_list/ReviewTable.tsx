@@ -3,9 +3,10 @@ import StatusBadge from './StatusBadge';
 
 interface ReviewTableProps {
   reviews: Review[];
+  onViewReview: (reviewId: number) => void;
 }
 
-export default function ReviewTable({ reviews }: ReviewTableProps) {
+export default function ReviewTable({ reviews, onViewReview }: ReviewTableProps) {
   return (
     <div className="review-table-wrapper">
       <table className="review-table">
@@ -35,7 +36,9 @@ export default function ReviewTable({ reviews }: ReviewTableProps) {
                 <StatusBadge status={review.status} />
               </td>
               <td className="center">
-                <button className="view-button">View</button>
+                <button className="view-button" onClick={() => onViewReview(review.id)}>
+                  View
+                </button>
               </td>
             </tr>
           ))}

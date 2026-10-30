@@ -8,6 +8,10 @@ import './ReviewList.css';
 
 const PAGE_SIZE = 5;   // rows per page, as in the mockup
 
+interface ReviewListPageProps {
+  onViewReview: (reviewId: number) => void;
+}
+
 // One place that knows how to call the reviews API.
 // It sits outside the component because it doesn't need any state;
 // it just takes the filters and returns the reviews.
@@ -35,7 +39,7 @@ function fetchReviews(periodId: number | "", employeeId: number | ""): Promise<R
     });
 }
 
-export default function ReviewListPage() {
+export default function ReviewListPage({ onViewReview }: ReviewListPageProps) {
   const [reviews, setReviews] = useState<Review[]>([]);
   const [periodId, setPeriodId] = useState<number | "">("");
   const [employeeId, setEmployeeId] = useState<number | "">("");
@@ -107,7 +111,7 @@ export default function ReviewListPage() {
 
       {!loading && !error && reviews.length > 0 && (
         <>
-          <ReviewTable reviews={pageReviews} />
+          <ReviewTable reviews={pageReviews} onViewReview={onViewReview} />
 
           <div className="review-list-footer">
             <p>
