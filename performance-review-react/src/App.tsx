@@ -10,7 +10,7 @@ import { ReviewPeriodPage } from "./components/review_period/ReviewPeriodPage";
 
 
 export default function App() {
-  const [page, setPage] = useState("employees");
+  const [page, setPage] = useState("dashboard");
   const [selectedReviewId, setSelectedReviewId] = useState<number | null>(null);
 
   return (
@@ -18,7 +18,7 @@ export default function App() {
       <SideNav page={page === "review-details" ? "reviews" : page} setPage={setPage} />
 
       <main className="app-content">
-        {page === "dashboard" && <h2 className="page-placeholder">Dashboard</h2>}
+        {page === "dashboard" && <Dashboard />}
         {page === "reviews" && (
           <ReviewListPage
             onViewReview={(reviewId) => {
