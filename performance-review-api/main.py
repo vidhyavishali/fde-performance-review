@@ -13,6 +13,7 @@ import services.EmployeeService as employee_service
 import services.ReviewPeriodService as review_period_service
 from models.ErrorResponse import ErrorResponse
 from models.PerformanceReview import Review
+from models.ReviewPeriod import review_periods as ReviewPeriod
 
 
 app = FastAPI(title="Employee Performance Review Management System API", version="1.0.0")
@@ -131,6 +132,20 @@ def get_employees():
 def get_review_periods():
     rev_periods = review_period_service.get_All_Review_Periods()
     return {"review_periods": rev_periods}
+
+
+@router.put("/review-periods/{id}",
+            response_model=dict,
+            summary="Update review period status",
+            description="Update the status of a review period",
+            tags=["Mandatory - Review Periods"],
+            operation_id="updateReviewPeriod",
+            responses={400: {"model": ErrorResponse, "description": "Invalid payload"},
+                       503: {"model": ErrorResponse, "description": "Database is unavailable."}}
+            )
+def update_review_period(id: int, payload: ReviewPeriod):
+    review_period_service.update_review_period(id, payload)
+    return {"message": "Review period updated successfully"}
 
 app.include_router(router)
 

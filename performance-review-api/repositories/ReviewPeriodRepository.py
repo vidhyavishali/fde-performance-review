@@ -33,3 +33,37 @@ def get_review_period(period_id: int) -> review_periods:
     if rev_period is None:
         return None
     return review_periods(**rev_period)
+
+def update_review_period(rev_period: review_periods):
+    connection = get_connection()
+    if connection is None:
+        raise RuntimeError("Database connection could not be established.")
+    cursor = connection.cursor()
+    try:
+        cursor.execute(
+            "UPDATE review_periods SET status = %s WHERE id = %s",
+            (rev_period.status, rev_period.id)
+        )
+        connection.commit()
+    except Exception as e:
+        raise RuntimeError(f"Error updating review period: {e}") from e
+    finally:
+        cursor.close()
+        connection.close()
+
+def get_open_review_period() -> review_periods:
+    connection = get_connection()
+    if connection is None:
+        raise RuntimeError("Database connection could not be established.")
+    cursor = connection.cursor()
+    try:
+        cursor.execute("SELECT * FROM review_periods WHERE status = 'Open' LIMIT 1")
+    except Exception as e:
+        raise RuntimeError(f"Error fetching open review period: {e}") from e
+    open_period = cursor.fetchone()
+    cursor.close()
+    connection.close()
+    if open_period is None:
+        return None
+    return review_periods(**open_period)
+

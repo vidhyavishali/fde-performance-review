@@ -1,0 +1,73 @@
+.review-period-grid {
+  display: grid;
+  grid-template-columns:
+    repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+}
+
+.review-period-tile {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  padding: 16px;
+  transition: 0.2s ease;
+}
+
+.review-period-tile:hover {
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+}
+
+.period-status {
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.period-status.open {
+  background: #dcfce7;
+  color: #15803d;
+}
+
+.period-status.closed {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+.period-status.upcoming {
+  background: #dbeafe;
+  color: #2563eb;
+}
+
+.active-period {
+  border: 2px solid #22c55e;
+}
+
+.make-active-btn {
+    margin-top: 12px;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 8px;
+    background: #8c9dc2;
+    color: white;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.make-active-btn:hover {
+    background: #5972b9;
+}
+
+.review-period-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.review-period-title {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #0f172a;
+  margin: 0;
+}

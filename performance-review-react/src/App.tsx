@@ -3,6 +3,10 @@ import SideNav from "./components/navigation/SideNav";
 import ReviewListPage from "./components/review_list/reviewListPage";
 import EmployeeListPage from "./components/employee/EmployeeListPage";
 import "./AppLayout.css";
+import Dashboard from "./components/dashboard/Dashboard";
+import ReviewFormPage from "./components/review_form/ReviewFormPage";
+import { ReviewPeriodPage } from "./components/review_period/ReviewPeriodPage";
+
 
 export default function App() {
   const [page, setPage] = useState("employees");
@@ -12,12 +16,11 @@ export default function App() {
       <SideNav page={page} setPage={setPage} />
 
       <main className="app-content">
-        {page === "dashboard" && <h2 className="page-placeholder">Dashboard</h2>}
+        {page === "dashboard" && <Dashboard />}
         {page === "reviews" && <ReviewListPage />}
         {page === "employees" && <EmployeeListPage />}
-        {page === "review-periods" && <h2 className="page-placeholder">Review Periods</h2>}
-        {page === "reports" && <h2 className="page-placeholder">Reports</h2>}
-        {page === "submit-review" && <h2 className="page-placeholder">Submit Review</h2>}
+        {page === "review-periods" && <ReviewPeriodPage />}
+        {page === "submit-review" && <ReviewFormPage />}
         {page === "settings" && <h2 className="page-placeholder">Settings</h2>}
         {page === "logout" && <h2 className="page-placeholder">Logout</h2>}
       </main>
