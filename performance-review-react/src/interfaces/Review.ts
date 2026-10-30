@@ -1,4 +1,4 @@
-export default interface Review {
+export  interface Review {
   id: number;
   employee_id: number;      // numeric key (10), NOT the EMP code
   employee_code: string;    // "EMP110"
@@ -13,3 +13,6 @@ export default interface Review {
   status: "Completed";
   created_at: string;       // ISO date text, e.g. "2026-10-25T10:22:00Z"
 }
+
+
+export type { Review as default };

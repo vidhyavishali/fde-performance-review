@@ -19,11 +19,11 @@
 
 .employees-title {
   margin: 8px 0 4px;
-  font-size: 2.4rem;
+  font-size: 1.8 rem;
   line-height: 1.05;
   color: #0f172a;
   letter-spacing: -0.03em;
-  font-weight: 700;
+  font-weight: 600;
 }
 
 .employees-subtitle {
@@ -56,7 +56,7 @@
   align-items: center;
   gap: 10px;
   color: #1e293b;
-  font-size: 1.65rem;
+  font-size: 1.1rem;
   font-weight: 700;
 }
 
@@ -145,7 +145,7 @@
 
 .employee-cards-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+ grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
   gap: 14px;
 }
 
@@ -168,14 +168,14 @@
 }
 
 .employee-avatar {
-  width: 54px;
-  height: 54px;
+  width: 44px;
+  height: 44px;
   border-radius: 14px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   font-weight: 700;
-  font-size: 1.9rem;
+  font-size: 1.5rem;
   flex-shrink: 0;
 }
 
@@ -192,31 +192,24 @@
 }
 
 .employee-name {
-  margin: 0 0 2px;
   color: #0f172a;
-  font-size: 1.8rem;
-  font-weight: 700;
-  line-height: 1.1;
-}
-
-.employee-id,
-.employee-dept,
-.employee-email {
-  margin: 0;
-  line-height: 1.35;
+  font-size: 1.1rem;
+  font-weight: 600;
+  line-height: 1.2;
 }
 
 .employee-id,
 .employee-email {
   color: #7b8799;
-  font-size: 1.45rem;
+  font-size: 0.85rem;
 }
 
 .employee-dept {
   color: #44566f;
-  font-size: 1.48rem;
-  font-weight: 600;
+  font-size: 0.9rem;
+  font-weight: 500;
 }
+
 
 .employee-card-right {
   display: flex;
@@ -279,4 +272,26 @@
   .employees-search-wrap {
     width: 100%;
   }
+
+  .employees-pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.employees-pagination button {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 6px;
+    background: #2563eb;
+    color: white;
+    cursor: pointer;
+}
+
+.employees-pagination button:disabled {
+    background: #d1d5db;
+    cursor: not-allowed;
+}
 }
